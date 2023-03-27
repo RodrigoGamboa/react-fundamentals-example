@@ -11,8 +11,8 @@ function Example1Solved() {
 
   useEffect(() => {
     getAllPokemon(numPokemons)
-        .then(data => setPokemon(data))
-	.finally(() => setLoading(false))
+      .then(data => setPokemon(data))
+	    .finally(() => setLoading(false))
   }, []);
 
   useEffect(() => {
@@ -26,7 +26,6 @@ function Example1Solved() {
 
   useEffect(() => {
      localStorage.setItem("favs", JSON.stringify(fav))
-
      const favStored = localStorage.getItem("favs")
   }, [fav])
 
@@ -56,26 +55,26 @@ function Example1Solved() {
   return (
     <>
 	    <div style={{position: "sticky", top: "30px", display: "flex", justifyContent: "center", gap: "1rem"}}>
-        	    <input style={{border: "3px solid black", marginBottom: "2rem", height: "2rem"}} placeholder="Search Pokemon" onChange={e => setSearchInput(e.target.value)} />
+        <input style={{border: "3px solid black", marginBottom: "2rem", height: "2rem"}} placeholder="Search Pokemon" onChange={e => setSearchInput(e.target.value)} />
 	    </div>
-            <section style={{display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "1rem", marginBottom: "4rem"}}>
-	        {pokemons.length === 0 && <p>No hay pokemon :c</p>}
-        	    {pokemons.length !== 0 && pokemons.map((pokemon: any) => 
-        	        <div 
+      <section style={{display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "1rem", marginBottom: "4rem"}}>
+	      {pokemons.length === 0 && <p>No hay pokemon :c</p>}
+        {pokemons.length !== 0 && pokemons.map((pokemon: any) => 
+          <div 
 	    	    key={pokemon.name}
 	    	    style={{display: "flex", flexDirection: "column", alignItems: "center", border: "3px solid black", padding: "1rem", width: "350px"}}
-	    	>
-        	            <h1 style={{margin: "0.5rem"}}>{pokemon.name}</h1>
-        	            <img src={pokemon.sprites.front_default} />
+	    	  >
+        	  <h1 style={{margin: "0.5rem"}}>{pokemon.name}</h1>
+        	  <img src={pokemon.sprites.front_default} />
 	    	    <h2 style={{margin: "0.25rem"}}>${pokemon.price}</h2>
-        	            <button onClick={() => addFav(pokemon.id)} style={{marginBottom: "0.25rem", background: `${fav[pokemon.id] ? 'IndianRed' : 'none'}`}}> &hearts;</button>
-        	            <button onClick={() => handleAddPokemon(pokemon)}>Agregar</button>
-        	        </div>
-        	    )}
-        	</section>
+        	  <button onClick={() => addFav(pokemon.id)} style={{marginBottom: "0.25rem", background: `${fav[pokemon.id] ? 'IndianRed' : 'none'}`}}> &hearts;</button>
+        	  <button onClick={() => handleAddPokemon(pokemon)}>Agregar</button>
+        	</div>
+        )}
+      </section>
 	    <aside style={{position: "sticky", bottom: "50px", display: "flex", justifyContent: "center", gap: "1rem"}}>
-	        <button style={{background: `${cart.length > 0 ? 'LightSkyBlue' : 'white'}`}}>{cart.length} items (total: ${total})</button>
-	        <button onClick={clearCart}>Clear</button>
+	      <button style={{background: `${cart.length > 0 ? 'LightSkyBlue' : 'white'}`}}>{cart.length} items (total: ${total})</button>
+	      <button onClick={clearCart}>Clear</button>
 	    </aside>
     </>
   )
