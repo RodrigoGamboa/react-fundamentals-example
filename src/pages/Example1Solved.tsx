@@ -2,6 +2,7 @@ import { useMemo, useState, useEffect } from 'react'
 import { getAllPokemon } from '../api'
 
 function Example1Solved() {
+  const numPokemons = 100 
   const [pokemon, setPokemon] = useState<any>([])
   const [loading, setLoading] = useState(true)
   const [cart, setCart] = useState<any>([])
@@ -9,7 +10,7 @@ function Example1Solved() {
   const [fav, setFav] = useState<Record<number, boolean>>({})
 
   useEffect(() => {
-    getAllPokemon(10)
+    getAllPokemon(numPokemons)
         .then(data => setPokemon(data))
 	.finally(() => setLoading(false))
   }, []);
