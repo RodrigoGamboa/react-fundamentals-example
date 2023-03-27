@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { getAllPokemon } from '../api'
 
 function Example1() {
-  const numPokemons = 100 
+  const numPokemons = 10 
   const [pokemon, setPokemon] = useState<any>([])
 
   useEffect(() => {

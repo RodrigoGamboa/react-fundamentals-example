@@ -8,6 +8,14 @@ function Home() {
       <div>
         <Link to="/example1-solved">Example</Link> 
         <Link to="/example1">Exercise</Link> 
+        <iframe
+          id="myIframe"
+          src="/example1-solved"
+          width="100%"
+          height="100%"
+          frameBorder="0"
+          title="myIframe"
+        />
       </div>
       
     </main>

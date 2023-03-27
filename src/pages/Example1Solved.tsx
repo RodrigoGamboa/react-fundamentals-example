@@ -2,7 +2,7 @@ import { useMemo, useState, useEffect } from 'react'
 import { getAllPokemon } from '../api'
 
 function Example1Solved() {
-  const numPokemons = 100 
+  const numPokemons = 10 
   const [pokemon, setPokemon] = useState<any>([])
   const [loading, setLoading] = useState(true)
   const [cart, setCart] = useState<any>([])
