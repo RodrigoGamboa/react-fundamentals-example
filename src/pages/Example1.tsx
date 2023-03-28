@@ -12,6 +12,7 @@ function Example1() {
 
   return (
     <>
+      <header>Back</header>
 	    <div style={{position: "sticky", top: "30px", display: "flex", justifyContent: "center", gap: "1rem"}}>
         <input style={{border: "3px solid black", marginBottom: "2rem", height: "2rem"}} placeholder="Search Pokemon" />
 	    </div>
