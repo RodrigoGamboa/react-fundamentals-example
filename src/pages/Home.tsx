@@ -11,9 +11,9 @@ function Home() {
 
   return (
     <div style={{height: "100vh", display: "flex", flexDirection: "column", justifyContent: "center"}}>
-      <header>
-        <button onClick={() => setLanguage("en")}>ENG</button>
-        <button onClick={() => setLanguage("es")}>ESP</button>
+      <header style={{marginTop: "1rem", alignSelf: "flex-end"}}>
+        <button style={{border: "none", background: "none"}} onClick={() => setLanguage("en")}>ENG</button>
+        <button style={{border: "none", background: "none"}} onClick={() => setLanguage("es")}>ESP</button>
       </header>
       <main style={{height: "100vh", display: "flex", flexDirection: "column", justifyContent: "center"}}>
         <h1>{getTranslation("homeTitle")}</h1>
